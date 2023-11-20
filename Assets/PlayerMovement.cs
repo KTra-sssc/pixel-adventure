@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         dirX = Input.GetAxisRaw("Horizontal");
         rbody.velocity = new Vector2(dirX * moveSpeed, rbody.velocity.y);
@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
         switchAnimation();
     }
 
-    void switchAnimation()
+    private void switchAnimation()
     {
         if (dirX < 0f)
         {

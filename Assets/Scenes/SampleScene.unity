@@ -507,10 +507,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 939928807}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -169, y: 108.2}
-  m_SizeDelta: {x: 132.4288, y: 31.5831}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 142, y: -40}
+  m_SizeDelta: {x: 261.6746, y: 52.0577}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &948126507
 MonoBehaviour:
@@ -525,7 +525,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8396226, g: 0.15366672, b: 0.629751, a: 1}
+  m_Color: {r: 0.8113208, g: 0.17910287, b: 0.73088026, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -534,12 +534,12 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: a83573b9c46d4cd428f3e7cfe67c35d3, type: 3}
-    m_FontSize: 20
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -816,6 +816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f46016fb15604f84da02c0aa4f163a3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: {fileID: 948126507}
 --- !u!4 &1546805589 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8284188468857074852, guid: 6cf161c5228af3f4fa6e8354708921c0, type: 3}

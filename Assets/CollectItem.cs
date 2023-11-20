@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UI;
 
 public class CollectItem : MonoBehaviour
 {
     private int item = 0;
+    [SerializeField] private Text score;
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -12,7 +15,7 @@ public class CollectItem : MonoBehaviour
         {
             Destroy(collision.gameObject);
             item++;
-            Debug.Log(item);
+            score.text = "Score: " + item;
         }
     }
 }

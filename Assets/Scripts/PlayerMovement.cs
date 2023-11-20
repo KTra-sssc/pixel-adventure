@@ -8,6 +8,10 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rbody; 
     private Animator animator;
     private SpriteRenderer spriteRenderer;
+    private BoxCollider2D boxCollider;
+
+    [SerializeField] private LayerMask ground;
+
     private float dirX = 0f;
     [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private float jumpSpeed = 15f;
@@ -19,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
         rbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        boxCollider = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -26,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
     {
         dirX = Input.GetAxisRaw("Horizontal");
         rbody.velocity = new Vector2(dirX * moveSpeed, rbody.velocity.y);
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && isOnTheGround())
         {
             rbody.velocity = new Vector2(rbody.velocity.x, jumpSpeed);
         }
@@ -60,5 +65,10 @@ public class PlayerMovement : MonoBehaviour
         }
 
         animator.SetInteger("state", (int)state);
+    }
+
+    private bool isOnTheGround()
+    {
+        return Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0f, Vector2.down, .1f, ground);
     }
 }

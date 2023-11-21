@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private float dirX = 0f;
     [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private float jumpSpeed = 15f;
-
+    [SerializeField] private AudioSource jumpSFX;
     private enum MoveState { idle, run, jump, fall };
     // Start is called before the first frame update
     void Start()
@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isOnTheGround())
         {
             rbody.velocity = new Vector2(rbody.velocity.x, jumpSpeed);
+            jumpSFX.Play();
         }
         switchAnimation();
     }
